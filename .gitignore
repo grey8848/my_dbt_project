@@ -1,4 +1,14 @@
-
+# dbt build artifacts
 target/
-dbt_packages/
 logs/
+
+# python
+__pycache__/
+*.pyc
+
+# editor
+.vscode/
+.idea/
+
+# os
+.DS_Store
