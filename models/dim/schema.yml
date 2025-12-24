@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: dim_user
+    description: 用户维度表（SCD2慢变维）
+    columns:
+      - name: user_key
+        description: 代理键（snapshot自动生成）
+        tests:
+          - not_null
+          - unique
+      - name: user_id
+        description: 自然键（用户ID）
+        tests:
+          - not_null
+      - name: user_name
+        description: 用户姓名
+      - name: gender
+        description: 性别
+      - name: user_status
+        description: 用户状态
+      - name: register_date
+        description: 注册日期
+      - name: valid_from
+        description: 有效开始日期
+        tests:
+          - not_null
+      - name: valid_to
+        description: 有效结束日期（null表示当前有效）
+      - name: is_current
+        description: 是否当前有效记录
+      - name: snapshot_at
+        description: snapshot更新时间
