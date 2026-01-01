@@ -13,7 +13,7 @@
 
 ---
 
-## 2. 分层说明
+## 2. 分层说
 
 ### 2.1 ODS（Operational Data Store）
 

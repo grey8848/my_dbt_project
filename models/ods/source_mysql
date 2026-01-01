@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: source_mysql
+    database: raw
+    schema: mysql
+
+    tables:
+      - name: user
+        description: "用户源表"
+        loaded_at_field: update_time
+
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 2
+            period: day
+
+      - name: order
+        description: "订单源表"
+        loaded_at_field: update_time
+
+        freshness:
+          warn_after:
+            count: 1
+            period: hour
+          error_after:
+            count: 2
+            period: hour
